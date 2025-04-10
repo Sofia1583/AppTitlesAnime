@@ -33,9 +33,10 @@
             btnUpdateType = new Button();
             btnDeleteType = new Button();
             panelFill = new Panel();
-            dataGridViewTypes = new Panel();
+            dataGridViewTypes = new DataGridView();
             flowLayoutPanelTop.SuspendLayout();
             panelFill.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelTop
@@ -85,6 +86,7 @@
             // 
             // panelFill
             // 
+            panelFill.AutoSize = true;
             panelFill.Controls.Add(dataGridViewTypes);
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 61);
@@ -95,12 +97,18 @@
             // 
             // dataGridViewTypes
             // 
-            dataGridViewTypes.BorderStyle = BorderStyle.FixedSingle;
+            dataGridViewTypes.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dataGridViewTypes.BackgroundColor = Color.White;
+            dataGridViewTypes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewTypes.Dock = DockStyle.Fill;
             dataGridViewTypes.Location = new Point(10, 10);
+            dataGridViewTypes.MultiSelect = false;
             dataGridViewTypes.Name = "dataGridViewTypes";
+            dataGridViewTypes.ReadOnly = true;
+            dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTypes.Size = new Size(516, 298);
             dataGridViewTypes.TabIndex = 0;
+            dataGridViewTypes.CellContentClick += dataGridViewTypes_CellContentClick;
             // 
             // FormListTypes
             // 
@@ -118,6 +126,7 @@
             flowLayoutPanelTop.ResumeLayout(false);
             flowLayoutPanelTop.PerformLayout();
             panelFill.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -129,6 +138,6 @@
         private Button btnUpdateType;
         private Button btnDeleteType;
         private Panel panelFill;
-        private Panel dataGridViewTypes;
+        private DataGridView dataGridViewTypes;
     }
 }
