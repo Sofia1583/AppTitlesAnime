@@ -48,7 +48,7 @@
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
             panelFill.Name = "panelFill";
-            panelFill.Padding = new Padding(10);
+            panelFill.Padding = new Padding(10, 10, 20, 10);
             panelFill.Size = new Size(434, 146);
             panelFill.TabIndex = 0;
             // 
@@ -58,7 +58,7 @@
             textBoxTypeName.Dock = DockStyle.Top;
             textBoxTypeName.Location = new Point(10, 35);
             textBoxTypeName.Name = "textBoxTypeName";
-            textBoxTypeName.Size = new Size(414, 32);
+            textBoxTypeName.Size = new Size(404, 32);
             textBoxTypeName.TabIndex = 1;
             textBoxTypeName.TextChanged += textBoxTypeName_TextChanged;
             textBoxTypeName.Validating += textBoxTypeName_Validating;

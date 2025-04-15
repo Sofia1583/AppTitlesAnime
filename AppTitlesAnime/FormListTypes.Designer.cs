@@ -1,4 +1,5 @@
-﻿namespace AppTitlesAnime
+﻿
+namespace AppTitlesAnime
 {
     partial class FormListTypes
     {
@@ -19,6 +20,8 @@
             }
             base.Dispose(disposing);
         }
+
+        private void GetV() => btnUpdateType.Click += BtnUpdateType_Click;
 
         #region Windows Form Designer generated code
 
@@ -76,6 +79,7 @@
             btnUpdateType.TabIndex = 1;
             btnUpdateType.Text = "Редактировать";
             btnUpdateType.UseVisualStyleBackColor = true;
+            btnUpdateType.Click += BtnUpdateType_Click;
             // 
             // btnDeleteType
             // 
@@ -111,7 +115,6 @@
             dataGridViewTypes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewTypes.Size = new Size(516, 298);
             dataGridViewTypes.TabIndex = 0;
-            dataGridViewTypes.CellContentClick += dataGridViewTypes_CellContentClick;
             // 
             // errorProvider
             // 
@@ -148,5 +151,6 @@
         private Panel panelFill;
         private DataGridView dataGridViewTypes;
         private ErrorProvider errorProvider;
+        private EventHandler btnUpdateType_Click;
     }
 }
