@@ -90,6 +90,7 @@ namespace AppTitlesAnime
             btnDeleteType.TabIndex = 2;
             btnDeleteType.Text = "Удалить";
             btnDeleteType.UseVisualStyleBackColor = true;
+            btnDeleteType.Click += btnDeleteType_Click;
             // 
             // panelFill
             // 
