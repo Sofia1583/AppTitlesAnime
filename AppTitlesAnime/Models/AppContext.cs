@@ -4,10 +4,11 @@ namespace AppTitlesAnime.Models;
 
 public partial class AppContext : DbContext
 {
+    internal object Genre;
 
     public virtual DbSet<AnimeTitle> AnimeTitles { get; set; }
 
-    public virtual DbSet<Genre> Genres { get; set; }
+    public virtual DbSet<Genre> GenreName { get; set; }
 
     public virtual DbSet<Status> Statuses { get; set; }
 
@@ -109,7 +110,7 @@ public partial class AppContext : DbContext
             entity.ToTable("types");
 
             entity.Property(e => e.Id).HasColumnName("id");
-            entity.Property(e => e.TypeName).HasColumnName("type_name");
+            entity.Property(e => e.GenreName).HasColumnName("type_name");
         });
 
         OnModelCreatingPartial(modelBuilder);

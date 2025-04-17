@@ -2,37 +2,37 @@
 
 namespace AppTitlesAnime
 {
-    public partial class formAddType : Form
+    public partial class FormAddGenre : Form
     {
-        public formAddType()
+        public FormAddGenre()
         {
             InitializeComponent();
         }
 
-        private void TextBoxTypeName_Validating(object sender, CancelEventArgs e)
+        private void TextBoxGenreName_Validating(object sender, CancelEventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxGenreName.Text))
             {
-                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
+                errorProviderGenre.SetError(textBoxGenreName, "Поле не может быть пустым!");
                 btnSaveChanges.Enabled = false;
             }
             else
             {
-                errorProvider.Clear();
+                errorProviderGenre.Clear();
                 btnSaveChanges.Enabled = true;
             }
         }
 
-        private void textBoxTypeName_TextChanged(object sender, EventArgs e)
+        private void TextBoxGenreName_TextChanged(object sender, EventArgs e)
         {
             if (String.IsNullOrEmpty(textBoxGenreName.Text))
             {
-                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
+                errorProviderGenre.SetError(textBoxGenreName, "Поле не может быть пустым!");
                 btnSaveChanges.Enabled = false;
             }
             else
             {
-                errorProvider.Clear();
+                errorProviderGenre.Clear();
                 btnSaveChanges.Enabled = true;
             }
         }

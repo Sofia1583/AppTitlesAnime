@@ -18,7 +18,7 @@ namespace AppTitlesAnime
             base.OnLoad(e);
             this.db = new AppContext();
             this.db.Types.Load();
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.GenreName).ToList();
 
             //скрытие столбцов
             dataGridViewTypes.Columns["Id"].Visible = false;
@@ -37,20 +37,20 @@ namespace AppTitlesAnime
 
         private void BtnAddType_Click(object sender, EventArgs e)
         {
-            FormAddType formAddType = new();
+            formAddType formAddType = new();
             DialogResult result = formAddType.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
                 return;
 
             Type type = new Type();
-            type.TypeName = formAddType.textBoxTypeName.Text;
+            type.GenreName = formAddType.textBoxGenreName.Text;
 
             db.Types.Add(type);
             db.SaveChanges();
 
             MessageBox.Show("Новый объект добавлен");
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.GenreName).ToList();
 
 
         }
@@ -66,24 +66,24 @@ namespace AppTitlesAnime
                 return;
 
             Type type = db.Types.Find(id);
-            FormAddType formAddType = new();
-            formAddType.textBoxTypeName.Text = type.TypeName;
+            formAddType formAddType = new();
+            formAddType.textBoxGenreName.Text = type.GenreName;
 
             DialogResult result = formAddType.ShowDialog(this);
 
             if (result == DialogResult.Cancel)
                 return;
 
-            type.TypeName = formAddType.textBoxTypeName.Text;
+            type.GenreName = formAddType.textBoxGenreName.Text;
             db.Types.Update(type);
             db.SaveChanges();
 
             MessageBox.Show("Объект изменен");
 
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.GenreName).ToList();
         }
 
-        private void btnDeleteType_Click(object sender, EventArgs e)
+        private void BtnDeleteType_Click(object sender, EventArgs e)
         {
             if (dataGridViewTypes.SelectedRows.Count == 0)
                 return;
@@ -107,7 +107,7 @@ namespace AppTitlesAnime
             db.SaveChanges();
             MessageBox.Show("Объект удален");
 
-            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.TypeName).ToList();
+            this.dataGridViewTypes.DataSource = this.db.Types.Local.OrderBy(o => o.GenreName).ToList();
         }
     }
 }

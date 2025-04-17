@@ -1,6 +1,6 @@
 ﻿namespace AppTitlesAnime
 {
-    partial class FormAddType
+    partial class formAddType
     {
         /// <summary>
         /// Required designer variable.
@@ -30,20 +30,28 @@
         {
             components = new System.ComponentModel.Container();
             panelFill = new Panel();
-            textBoxTypeName = new TextBox();
+            textBoxGenreName = new TextBox();
             labelTypeName = new Label();
             flowLayoutPanelBottom = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
             errorProvider = new ErrorProvider(components);
+            panelTop = new Panel();
+            textBoxType = new TextBox();
+            labelName = new Label();
+            buttonSave = new Button();
+            buttonCansel = new Button();
+            flowLayoutPanel = new FlowLayoutPanel();
             panelFill.SuspendLayout();
             flowLayoutPanelBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            panelTop.SuspendLayout();
+            flowLayoutPanel.SuspendLayout();
             SuspendLayout();
             // 
             // panelFill
             // 
-            panelFill.Controls.Add(textBoxTypeName);
+            panelFill.Controls.Add(textBoxGenreName);
             panelFill.Controls.Add(labelTypeName);
             panelFill.Dock = DockStyle.Fill;
             panelFill.Location = new Point(0, 0);
@@ -52,16 +60,14 @@
             panelFill.Size = new Size(434, 146);
             panelFill.TabIndex = 0;
             // 
-            // textBoxTypeName
+            // textBoxGenreName
             // 
-            textBoxTypeName.BorderStyle = BorderStyle.FixedSingle;
-            textBoxTypeName.Dock = DockStyle.Top;
-            textBoxTypeName.Location = new Point(10, 35);
-            textBoxTypeName.Name = "textBoxTypeName";
-            textBoxTypeName.Size = new Size(404, 32);
-            textBoxTypeName.TabIndex = 1;
-            textBoxTypeName.TextChanged += textBoxTypeName_TextChanged;
-            textBoxTypeName.Validating += textBoxTypeName_Validating;
+            textBoxGenreName.BorderStyle = BorderStyle.FixedSingle;
+            textBoxGenreName.Dock = DockStyle.Top;
+            textBoxGenreName.Location = new Point(10, 25);
+            textBoxGenreName.Name = "textBoxGenreName";
+            textBoxGenreName.Size = new Size(404, 23);
+            textBoxGenreName.TabIndex = 1;
             // 
             // labelTypeName
             // 
@@ -70,7 +76,7 @@
             labelTypeName.Location = new Point(10, 10);
             labelTypeName.Margin = new Padding(3);
             labelTypeName.Name = "labelTypeName";
-            labelTypeName.Size = new Size(104, 25);
+            labelTypeName.Size = new Size(65, 15);
             labelTypeName.TabIndex = 0;
             labelTypeName.Text = "Тип аниме";
             // 
@@ -112,25 +118,98 @@
             // 
             errorProvider.ContainerControl = this;
             // 
-            // FormAddType
+            // panelTop
             // 
-            AutoScaleDimensions = new SizeF(11F, 25F);
-            AutoScaleMode = AutoScaleMode.Font;
-            BackColor = Color.White;
+            panelTop.BackColor = Color.White;
+            panelTop.Controls.Add(textBoxType);
+            panelTop.Controls.Add(labelName);
+            panelTop.Dock = DockStyle.Top;
+            panelTop.Font = new Font("Segoe UI", 14F);
+            panelTop.Location = new Point(0, 0);
+            panelTop.Name = "panelTop";
+            panelTop.Padding = new Padding(10, 10, 20, 10);
+            panelTop.Size = new Size(434, 78);
+            panelTop.TabIndex = 1;
+            // 
+            // textBoxType
+            // 
+            textBoxType.BorderStyle = BorderStyle.FixedSingle;
+            textBoxType.Dock = DockStyle.Top;
+            textBoxType.Font = new Font("Segoe UI", 14F);
+            textBoxType.Location = new Point(10, 35);
+            textBoxType.Name = "textBoxType";
+            textBoxType.Size = new Size(404, 32);
+            textBoxType.TabIndex = 1;
+            // 
+            // labelName
+            // 
+            labelName.AutoSize = true;
+            labelName.Dock = DockStyle.Top;
+            labelName.Font = new Font("Segoe UI", 14F);
+            labelName.Location = new Point(10, 10);
+            labelName.Margin = new Padding(3);
+            labelName.Name = "labelName";
+            labelName.Size = new Size(104, 25);
+            labelName.TabIndex = 1;
+            labelName.Text = "Тип аниме";
+            // 
+            // buttonSave
+            // 
+            buttonSave.AutoSize = true;
+            buttonSave.DialogResult = DialogResult.OK;
+            buttonSave.Font = new Font("Segoe UI", 14F);
+            buttonSave.Location = new Point(13, 13);
+            buttonSave.Name = "buttonSave";
+            buttonSave.Size = new Size(120, 35);
+            buttonSave.TabIndex = 0;
+            buttonSave.Text = "Сохранить ";
+            buttonSave.UseVisualStyleBackColor = true;
+            // 
+            // buttonCansel
+            // 
+            buttonCansel.AutoSize = true;
+            buttonCansel.DialogResult = DialogResult.Cancel;
+            buttonCansel.Font = new Font("Segoe UI", 14F);
+            buttonCansel.Location = new Point(139, 13);
+            buttonCansel.Name = "buttonCansel";
+            buttonCansel.Size = new Size(88, 35);
+            buttonCansel.TabIndex = 1;
+            buttonCansel.Text = "Отмена";
+            buttonCansel.UseVisualStyleBackColor = true;
+            // 
+            // flowLayoutPanel
+            // 
+            flowLayoutPanel.AutoSize = true;
+            flowLayoutPanel.BackColor = Color.White;
+            flowLayoutPanel.Controls.Add(buttonSave);
+            flowLayoutPanel.Controls.Add(buttonCansel);
+            flowLayoutPanel.Dock = DockStyle.Fill;
+            flowLayoutPanel.Location = new Point(0, 78);
+            flowLayoutPanel.Name = "flowLayoutPanel";
+            flowLayoutPanel.Padding = new Padding(10);
+            flowLayoutPanel.Size = new Size(434, 68);
+            flowLayoutPanel.TabIndex = 2;
+            // 
+            // formAddType
+            // 
             ClientSize = new Size(434, 146);
-            Controls.Add(flowLayoutPanelBottom);
-            Controls.Add(panelFill);
-            Font = new Font("Segoe UI", 14F);
-            Margin = new Padding(5);
-            Name = "FormAddType";
-            Text = "Информация о типе аниме";
+            Controls.Add(flowLayoutPanel);
+            Controls.Add(panelTop);
+            Name = "formAddType";
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            panelTop.ResumeLayout(false);
+            panelTop.PerformLayout();
+            flowLayoutPanel.ResumeLayout(false);
+            flowLayoutPanel.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
+            // 
+            // errorProvider
+            // 
         }
 
         #endregion
@@ -140,7 +219,13 @@
         private Button btnSaveChanges;
         private Button btnCancel;
         private Label labelTypeName;
-        protected internal TextBox textBoxTypeName;
+        protected internal TextBox textBoxGenreName;
         private ErrorProvider errorProvider;
+        private Panel panelTop;
+        protected internal TextBox textBoxType;
+        private Label labelName;
+        private FlowLayoutPanel flowLayoutPanel;
+        private Button buttonSave;
+        private Button buttonCansel;
     }
 }
