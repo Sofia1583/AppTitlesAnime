@@ -29,8 +29,9 @@
         private void InitializeComponent()
         {
             btnShowTypes = new Button();
-            buttonGenre = new Button();
-            buttonShowStatuses = new Button();
+            btnShowGenre = new Button();
+            btnShowStatuses = new Button();
+            btnShowTitles = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -45,37 +46,50 @@
             btnShowTypes.UseVisualStyleBackColor = false;
             btnShowTypes.Click += BtnShowTypes_Click;
             // 
-            // buttonGenre
+            // btnShowGenre
             // 
-            buttonGenre.AutoSize = true;
-            buttonGenre.BackColor = Color.White;
-            buttonGenre.Location = new Point(12, 64);
-            buttonGenre.Name = "buttonGenre";
-            buttonGenre.Size = new Size(329, 35);
-            buttonGenre.TabIndex = 1;
-            buttonGenre.Text = "Отобразить список \"Жанры аниме\"";
-            buttonGenre.UseVisualStyleBackColor = false;
-            buttonGenre.Click += ButtonGenre_Click;
+            btnShowGenre.AutoSize = true;
+            btnShowGenre.BackColor = Color.White;
+            btnShowGenre.Location = new Point(12, 64);
+            btnShowGenre.Name = "btnShowGenre";
+            btnShowGenre.Size = new Size(329, 35);
+            btnShowGenre.TabIndex = 1;
+            btnShowGenre.Text = "Отобразить список \"Жанры аниме\"";
+            btnShowGenre.UseVisualStyleBackColor = false;
+            btnShowGenre.Click += ButtonGenre_Click;
             // 
-            // buttonShowStatuses
+            // btnShowStatuses
             // 
-            buttonShowStatuses.AutoSize = true;
-            buttonShowStatuses.BackColor = Color.White;
-            buttonShowStatuses.Location = new Point(12, 114);
-            buttonShowStatuses.Name = "buttonShowStatuses";
-            buttonShowStatuses.Size = new Size(337, 35);
-            buttonShowStatuses.TabIndex = 2;
-            buttonShowStatuses.Text = "Отобразить список \"Статусы аниме\"";
-            buttonShowStatuses.UseVisualStyleBackColor = false;
-            buttonShowStatuses.Click += ButtonShowStatuses_Click;
+            btnShowStatuses.AutoSize = true;
+            btnShowStatuses.BackColor = Color.White;
+            btnShowStatuses.Location = new Point(12, 114);
+            btnShowStatuses.Name = "btnShowStatuses";
+            btnShowStatuses.Size = new Size(337, 35);
+            btnShowStatuses.TabIndex = 2;
+            btnShowStatuses.Text = "Отобразить список \"Статусы аниме\"";
+            btnShowStatuses.UseVisualStyleBackColor = false;
+            btnShowStatuses.Click += ButtonShowStatuses_Click;
+            // 
+            // btnShowTitles
+            // 
+            btnShowTitles.AutoSize = true;
+            btnShowTitles.BackColor = Color.White;
+            btnShowTitles.Location = new Point(12, 155);
+            btnShowTitles.Name = "btnShowTitles";
+            btnShowTitles.Size = new Size(337, 35);
+            btnShowTitles.TabIndex = 3;
+            btnShowTitles.Text = "Отобразить список \"Аниме\"";
+            btnShowTitles.UseVisualStyleBackColor = false;
+            btnShowTitles.Click += BtnShowTitles_Click;
             // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(547, 347);
-            Controls.Add(buttonShowStatuses);
-            Controls.Add(buttonGenre);
+            Controls.Add(btnShowTitles);
+            Controls.Add(btnShowStatuses);
+            Controls.Add(btnShowGenre);
             Controls.Add(btnShowTypes);
             Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
             Margin = new Padding(5);
@@ -88,7 +102,8 @@
         #endregion
 
         private Button btnShowTypes;
-        private Button buttonGenre;
-        private Button buttonShowStatuses;
+        private Button btnShowGenre;
+        private Button btnShowStatuses;
+        private Button btnShowTitles;
     }
 }

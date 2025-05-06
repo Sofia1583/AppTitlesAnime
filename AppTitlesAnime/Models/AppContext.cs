@@ -12,6 +12,8 @@ public partial class AppContext : DbContext
 
     public virtual DbSet<Status> Statuses { get; set; }
 
+    public virtual DbSet<Status> StatusName { get; set; }
+
     public virtual DbSet<TitlesGenre> TitlesGenres { get; set; }
 
     public virtual DbSet<TitlesStatus> TitlesStatuses { get; set; }
