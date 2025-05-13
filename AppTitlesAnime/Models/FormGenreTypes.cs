@@ -11,6 +11,8 @@ namespace AppTitlesAnime.Models
         public FormGenreTypes()
         {
             InitializeComponent();
+            db = new AppContext();
+            this.db = db;
         }
 
         protected override void OnLoad(EventArgs e)
@@ -34,24 +36,6 @@ namespace AppTitlesAnime.Models
             this.db?.Dispose();
             this.db = null;
         }
-        private void ButtonAddGenre_Click(object sender, EventArgs e)
-        {
-            FormAddGenre formAddGenre = new();
-            DialogResult result = formAddGenre.ShowDialog(this);
-
-            if (result == DialogResult.Cancel)
-                return;
-
-            Genre genre = new Genre();
-            genre.GenreName = formAddGenre.textBoxGenreName.Text;
-
-            db.GenreName.Add(genre);
-            db.SaveChanges();
-
-            MessageBox.Show("Новый объект добавлен");
-            this.dataGridViewGenres.DataSource = this.db.GenreName.Local.OrderBy(o => o.GenreName).ToList();
-        }
-
         private void ButtonUpdateGenre_Click(object sender, EventArgs e)
         {
             if (dataGridViewGenres.SelectedRows.Count == 0)
@@ -105,6 +89,24 @@ namespace AppTitlesAnime.Models
             db.SaveChanges();
             MessageBox.Show("Объект удален");
 
+            this.dataGridViewGenres.DataSource = this.db.GenreName.Local.OrderBy(o => o.GenreName).ToList();
+        }
+
+        private void ButtonAddGenre_Click(object sender, EventArgs e)
+        {
+            FormAddGenre formAddGenre = new();
+            DialogResult result = formAddGenre.ShowDialog(this);
+
+            if (result == DialogResult.Cancel)
+                return;
+
+            Genre genre = new Genre();
+            genre.GenreName = formAddGenre.textBoxGenreName.Text;
+
+            db.GenreName.Add(genre);
+            db.SaveChanges();
+
+            MessageBox.Show("Новый объект добавлен");
             this.dataGridViewGenres.DataSource = this.db.GenreName.Local.OrderBy(o => o.GenreName).ToList();
         }
     }

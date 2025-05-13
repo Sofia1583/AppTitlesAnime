@@ -38,11 +38,11 @@ namespace AppTitlesAnime
             btnDeleteType = new Button();
             panelFill = new Panel();
             dataGridViewTypes = new DataGridView();
-            errorProvider = new ErrorProvider(components);
+            errorProviderType = new ErrorProvider(components);
             flowLayoutPanelTop.SuspendLayout();
             panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderType).BeginInit();
             SuspendLayout();
             // 
             // flowLayoutPanelTop
@@ -117,9 +117,9 @@ namespace AppTitlesAnime
             dataGridViewTypes.Size = new Size(516, 298);
             dataGridViewTypes.TabIndex = 0;
             // 
-            // errorProvider
+            // errorProviderType
             // 
-            errorProvider.ContainerControl = this;
+            errorProviderType.ContainerControl = this;
             // 
             // FormListTypes
             // 
@@ -138,7 +138,7 @@ namespace AppTitlesAnime
             flowLayoutPanelTop.PerformLayout();
             panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewTypes).EndInit();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderType).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -151,7 +151,7 @@ namespace AppTitlesAnime
         private Button btnDeleteType;
         private Panel panelFill;
         private DataGridView dataGridViewTypes;
-        private ErrorProvider errorProvider;
         private EventHandler btnUpdateType_Click;
+        private ErrorProvider errorProviderType;
     }
 }

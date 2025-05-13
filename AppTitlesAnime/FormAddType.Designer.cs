@@ -35,18 +35,18 @@
             flowLayoutPanelBottom = new FlowLayoutPanel();
             btnSaveChanges = new Button();
             btnCancel = new Button();
-            errorProvider = new ErrorProvider(components);
             panelTop = new Panel();
             textBoxType = new TextBox();
             labelName = new Label();
             buttonSave = new Button();
             buttonCansel = new Button();
             flowLayoutPanel = new FlowLayoutPanel();
+            errorProviderType = new ErrorProvider(components);
             panelFill.SuspendLayout();
             flowLayoutPanelBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).BeginInit();
             panelTop.SuspendLayout();
             flowLayoutPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderType).BeginInit();
             SuspendLayout();
             // 
             // panelFill
@@ -114,10 +114,6 @@
             btnCancel.Text = "Отмена";
             btnCancel.UseVisualStyleBackColor = true;
             // 
-            // errorProvider
-            // 
-            errorProvider.ContainerControl = this;
-            // 
             // panelTop
             // 
             panelTop.BackColor = Color.White;
@@ -140,6 +136,8 @@
             textBoxType.Name = "textBoxType";
             textBoxType.Size = new Size(404, 32);
             textBoxType.TabIndex = 1;
+            textBoxType.TextChanged += TextBoxType_TextChanged;
+            textBoxType.Validating += TextBoxType_Validating;
             // 
             // labelName
             // 
@@ -190,6 +188,10 @@
             flowLayoutPanel.Size = new Size(434, 68);
             flowLayoutPanel.TabIndex = 2;
             // 
+            // errorProviderType
+            // 
+            errorProviderType.ContainerControl = this;
+            // 
             // formAddType
             // 
             ClientSize = new Size(434, 146);
@@ -200,11 +202,11 @@
             panelFill.PerformLayout();
             flowLayoutPanelBottom.ResumeLayout(false);
             flowLayoutPanelBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)errorProvider).EndInit();
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             flowLayoutPanel.ResumeLayout(false);
             flowLayoutPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)errorProviderType).EndInit();
             ResumeLayout(false);
             PerformLayout();
             // 
@@ -220,12 +222,12 @@
         private Button btnCancel;
         private Label labelTypeName;
         protected internal TextBox textBoxGenreName;
-        private ErrorProvider errorProvider;
         private Panel panelTop;
         protected internal TextBox textBoxType;
         private Label labelName;
         private FlowLayoutPanel flowLayoutPanel;
         private Button buttonSave;
         private Button buttonCansel;
+        private ErrorProvider errorProviderType;
     }
 }

@@ -28,72 +28,79 @@
         /// </summary>
         private void InitializeComponent()
         {
-            panelTop = new Panel();
-            panelFill = new Panel();
+            components = new System.ComponentModel.Container();
             buttonDeleteStatuse = new Button();
             buttonUpdateStatuse = new Button();
-            buttonAddStatuse = new Button();
+            buttonAddStatus = new Button();
+            flowLayoutPanel1 = new FlowLayoutPanel();
+            panelFill = new Panel();
             dataGridViewStatuses = new DataGridView();
-            panelTop.SuspendLayout();
+            errorProviderStatuses = new ErrorProvider(components);
+            flowLayoutPanel1.SuspendLayout();
             panelFill.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridViewStatuses).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderStatuses).BeginInit();
             SuspendLayout();
             // 
-            // panelTop
+            // buttonDeleteStatuse
             // 
-            panelTop.BackColor = Color.White;
-            panelTop.Controls.Add(buttonDeleteStatuse);
-            panelTop.Controls.Add(buttonUpdateStatuse);
-            panelTop.Controls.Add(buttonAddStatuse);
-            panelTop.Dock = DockStyle.Top;
-            panelTop.Location = new Point(0, 0);
-            panelTop.Name = "panelTop";
-            panelTop.Size = new Size(476, 100);
-            panelTop.TabIndex = 0;
+            buttonDeleteStatuse.AutoSize = true;
+            buttonDeleteStatuse.Font = new Font("Segoe UI", 14F);
+            buttonDeleteStatuse.Location = new Point(272, 3);
+            buttonDeleteStatuse.Name = "buttonDeleteStatuse";
+            buttonDeleteStatuse.Size = new Size(92, 35);
+            buttonDeleteStatuse.TabIndex = 2;
+            buttonDeleteStatuse.Text = "Удалить";
+            buttonDeleteStatuse.UseVisualStyleBackColor = true;
+            buttonDeleteStatuse.Click += ButtonDeleteStatuse_Click;
+            // 
+            // buttonUpdateStatuse
+            // 
+            buttonUpdateStatuse.AutoSize = true;
+            buttonUpdateStatuse.Font = new Font("Segoe UI", 14F);
+            buttonUpdateStatuse.Location = new Point(115, 3);
+            buttonUpdateStatuse.Name = "buttonUpdateStatuse";
+            buttonUpdateStatuse.Size = new Size(151, 35);
+            buttonUpdateStatuse.TabIndex = 1;
+            buttonUpdateStatuse.Text = "Редактировать";
+            buttonUpdateStatuse.UseVisualStyleBackColor = true;
+            buttonUpdateStatuse.Click += ButtonUpdateStatuse_Click;
+            // 
+            // buttonAddStatus
+            // 
+            buttonAddStatus.AutoSize = true;
+            buttonAddStatus.Font = new Font("Segoe UI", 14F);
+            buttonAddStatus.Location = new Point(3, 3);
+            buttonAddStatus.Name = "buttonAddStatus";
+            buttonAddStatus.Size = new Size(106, 35);
+            buttonAddStatus.TabIndex = 0;
+            buttonAddStatus.Text = "Добавить";
+            buttonAddStatus.UseVisualStyleBackColor = true;
+            buttonAddStatus.Click += ButtonAddStatus_Click;
+            // 
+            // flowLayoutPanel1
+            // 
+            flowLayoutPanel1.BackColor = Color.White;
+            flowLayoutPanel1.Controls.Add(buttonAddStatus);
+            flowLayoutPanel1.Controls.Add(buttonUpdateStatuse);
+            flowLayoutPanel1.Controls.Add(buttonDeleteStatuse);
+            flowLayoutPanel1.Dock = DockStyle.Top;
+            flowLayoutPanel1.Location = new Point(0, 0);
+            flowLayoutPanel1.Name = "flowLayoutPanel1";
+            flowLayoutPanel1.Size = new Size(476, 75);
+            flowLayoutPanel1.TabIndex = 3;
             // 
             // panelFill
             // 
             panelFill.BackColor = Color.White;
             panelFill.Controls.Add(dataGridViewStatuses);
             panelFill.Dock = DockStyle.Fill;
-            panelFill.Location = new Point(0, 100);
+            panelFill.Font = new Font("Segoe UI", 14F);
+            panelFill.Location = new Point(0, 75);
             panelFill.Name = "panelFill";
             panelFill.Padding = new Padding(10);
-            panelFill.Size = new Size(476, 350);
+            panelFill.Size = new Size(476, 375);
             panelFill.TabIndex = 1;
-            // 
-            // buttonDeleteStatuse
-            // 
-            buttonDeleteStatuse.AutoSize = true;
-            buttonDeleteStatuse.Font = new Font("Segoe UI", 14F);
-            buttonDeleteStatuse.Location = new Point(281, 24);
-            buttonDeleteStatuse.Name = "buttonDeleteStatuse";
-            buttonDeleteStatuse.Size = new Size(92, 35);
-            buttonDeleteStatuse.TabIndex = 5;
-            buttonDeleteStatuse.Text = "Удалить";
-            buttonDeleteStatuse.UseVisualStyleBackColor = true;
-            // 
-            // buttonUpdateStatuse
-            // 
-            buttonUpdateStatuse.AutoSize = true;
-            buttonUpdateStatuse.Font = new Font("Segoe UI", 14F);
-            buttonUpdateStatuse.Location = new Point(124, 24);
-            buttonUpdateStatuse.Name = "buttonUpdateStatuse";
-            buttonUpdateStatuse.Size = new Size(151, 35);
-            buttonUpdateStatuse.TabIndex = 4;
-            buttonUpdateStatuse.Text = "Редактировать";
-            buttonUpdateStatuse.UseVisualStyleBackColor = true;
-            // 
-            // buttonAddStatuse
-            // 
-            buttonAddStatuse.AutoSize = true;
-            buttonAddStatuse.Font = new Font("Segoe UI", 14F);
-            buttonAddStatuse.Location = new Point(12, 24);
-            buttonAddStatuse.Name = "buttonAddStatuse";
-            buttonAddStatuse.Size = new Size(106, 35);
-            buttonAddStatuse.TabIndex = 3;
-            buttonAddStatuse.Text = "Добавить";
-            buttonAddStatuse.UseVisualStyleBackColor = true;
             // 
             // dataGridViewStatuses
             // 
@@ -105,9 +112,12 @@
             dataGridViewStatuses.MultiSelect = false;
             dataGridViewStatuses.Name = "dataGridViewStatuses";
             dataGridViewStatuses.ReadOnly = true;
-            dataGridViewStatuses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridViewStatuses.Size = new Size(456, 330);
-            dataGridViewStatuses.TabIndex = 1;
+            dataGridViewStatuses.Size = new Size(456, 355);
+            dataGridViewStatuses.TabIndex = 0;
+            // 
+            // errorProviderStatuses
+            // 
+            errorProviderStatuses.ContainerControl = this;
             // 
             // FormStatuses
             // 
@@ -115,23 +125,24 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(476, 450);
             Controls.Add(panelFill);
-            Controls.Add(panelTop);
+            Controls.Add(flowLayoutPanel1);
             Name = "FormStatuses";
             Text = "FormStatuses";
-            panelTop.ResumeLayout(false);
-            panelTop.PerformLayout();
+            flowLayoutPanel1.ResumeLayout(false);
+            flowLayoutPanel1.PerformLayout();
             panelFill.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dataGridViewStatuses).EndInit();
+            ((System.ComponentModel.ISupportInitialize)errorProviderStatuses).EndInit();
             ResumeLayout(false);
         }
 
         #endregion
-
-        private Panel panelTop;
-        private Panel panelFill;
         private Button buttonDeleteStatuse;
         private Button buttonUpdateStatuse;
-        private Button buttonAddStatuse;
+        private Button buttonAddStatus;
+        private FlowLayoutPanel flowLayoutPanel1;
         private DataGridView dataGridViewStatuses;
+        protected Panel panelFill;
+        private ErrorProvider errorProviderStatuses;
     }
 }

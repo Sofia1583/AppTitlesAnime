@@ -1,39 +1,62 @@
 ﻿using System.ComponentModel;
-
+using System.Windows.Forms;
+using AppContext = AppTitlesAnime.Models.AppContext;
 namespace AppTitlesAnime
 {
     public partial class formAddType : Form
     {
+        private AppContext db;
+
         public formAddType()
         {
             InitializeComponent();
+            db = new AppContext();
         }
 
-        private void TextBoxTypeName_Validating(object sender, CancelEventArgs e)
+        private void TextBoxType_TextChanged(object sender, EventArgs e)
         {
-            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            ValidateType(); // Вызываем функцию валидации
+        }
+
+        private void TextBoxType_Validating(object sender, CancelEventArgs e)
+        {
+            ValidateType(); // Вызываем функцию валидации
+
+            if (errorProviderType.GetError(textBoxType) != string.Empty)
             {
-                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
-                btnSaveChanges.Enabled = false;
-            }
-            else
-            {
-                errorProvider.Clear();
-                btnSaveChanges.Enabled = true;
+                e.Cancel = true; // Предотвращаем потерю фокуса, если есть ошибка
             }
         }
 
-        private void textBoxTypeName_TextChanged(object sender, EventArgs e)
+        private void ValidateType()
         {
-            if (String.IsNullOrEmpty(textBoxGenreName.Text))
+            string typeName = textBoxType.Text.Trim();
+
+            if (string.IsNullOrEmpty(typeName))
             {
-                errorProvider.SetError(textBoxGenreName, "Поле не может быть пустым!");
+                errorProviderType.SetError(textBoxType, "Поле не может быть пустым!");
                 btnSaveChanges.Enabled = false;
+                return; // Выходим, если поле пустое
             }
-            else
+
+            try
             {
-                errorProvider.Clear();
-                btnSaveChanges.Enabled = true;
+                bool typeExists = db.Types.Any(t => t.TypeName.ToLower() == typeName.ToLower());
+
+                if (typeExists)
+                {
+                    errorProviderType.SetError(textBoxType, "Такой объект уже существует");
+                    btnSaveChanges.Enabled = false;
+                }
+                else
+                {
+                    errorProviderType.Clear();
+                    btnSaveChanges.Enabled = true;
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Произошла ошибка: " + ex.Message);
             }
         }
     }

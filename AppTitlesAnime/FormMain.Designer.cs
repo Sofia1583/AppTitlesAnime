@@ -31,6 +31,7 @@
             btnShowTypes = new Button();
             buttonGenre = new Button();
             buttonShowStatuses = new Button();
+            btnShowTitles = new Button();
             SuspendLayout();
             // 
             // btnShowTypes
@@ -69,11 +70,24 @@
             buttonShowStatuses.UseVisualStyleBackColor = false;
             buttonShowStatuses.Click += ButtonShowStatuses_Click;
             // 
+            // btnShowTitles
+            // 
+            btnShowTitles.AutoSize = true;
+            btnShowTitles.BackColor = Color.White;
+            btnShowTitles.Location = new Point(12, 155);
+            btnShowTitles.Name = "btnShowTitles";
+            btnShowTitles.Size = new Size(337, 35);
+            btnShowTitles.TabIndex = 3;
+            btnShowTitles.Text = "Отобразить список \"Аниме\"\r\n";
+            btnShowTitles.UseVisualStyleBackColor = false;
+            btnShowTitles.Click += BtnShowTitles_Click;
+            // 
             // FormMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(547, 347);
+            Controls.Add(btnShowTitles);
             Controls.Add(buttonShowStatuses);
             Controls.Add(buttonGenre);
             Controls.Add(btnShowTypes);
@@ -90,5 +104,6 @@
         private Button btnShowTypes;
         private Button buttonGenre;
         private Button buttonShowStatuses;
+        private Button btnShowTitles;
     }
 }
