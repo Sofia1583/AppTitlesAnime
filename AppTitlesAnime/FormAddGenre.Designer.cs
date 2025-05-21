@@ -126,7 +126,7 @@
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanelBottom);
             Name = "FormAddGenre";
-            Text = "FormAddGenre";
+            Text = "Информация о жанре";
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
             flowLayoutPanelBottom.ResumeLayout(false);

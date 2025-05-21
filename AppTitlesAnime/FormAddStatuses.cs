@@ -1,5 +1,4 @@
 ﻿using System.ComponentModel;
-using System.Windows.Forms;
 using AppContext = AppTitlesAnime.Models.AppContext;
 namespace AppTitlesAnime
 {
@@ -29,6 +28,7 @@ namespace AppTitlesAnime
 
         private void TextBoxStatusName_Validating(object sender, CancelEventArgs e)
         {
+            //MessageBox.Show("Validating");
             if (String.IsNullOrEmpty(textBoxStatusName.Text))
             {
                 errorProviderStatus.SetError(textBoxStatusName, "Поле не может быть пустым!");

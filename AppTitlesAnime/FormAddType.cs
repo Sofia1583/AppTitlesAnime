@@ -1,5 +1,6 @@
 ﻿using System.ComponentModel;
 using System.Windows.Forms;
+using Microsoft.EntityFrameworkCore;
 using AppContext = AppTitlesAnime.Models.AppContext;
 namespace AppTitlesAnime
 {
@@ -41,7 +42,7 @@ namespace AppTitlesAnime
 
             try
             {
-                bool typeExists = db.Types.Any(t => t.TypeName.ToLower() == typeName.ToLower());
+                bool typeExists = db.Types.Any(t => EF.Functions.Like((string)t.TypeName, typeName));
 
                 if (typeExists)
                 {

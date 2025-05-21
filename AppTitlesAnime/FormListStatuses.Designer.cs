@@ -1,6 +1,6 @@
 ﻿namespace AppTitlesAnime
 {
-    partial class FormStatuses
+    partial class FormListStatuses
     {
         /// <summary>
         /// Required designer variable.
@@ -112,6 +112,7 @@
             dataGridViewStatuses.MultiSelect = false;
             dataGridViewStatuses.Name = "dataGridViewStatuses";
             dataGridViewStatuses.ReadOnly = true;
+            dataGridViewStatuses.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dataGridViewStatuses.Size = new Size(456, 355);
             dataGridViewStatuses.TabIndex = 0;
             // 
@@ -119,15 +120,15 @@
             // 
             errorProviderStatuses.ContainerControl = this;
             // 
-            // FormStatuses
+            // FormListStatuses
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(476, 450);
             Controls.Add(panelFill);
             Controls.Add(flowLayoutPanel1);
-            Name = "FormStatuses";
-            Text = "FormStatuses";
+            Name = "FormListStatuses";
+            Text = "Список статусов аниме";
             flowLayoutPanel1.ResumeLayout(false);
             flowLayoutPanel1.PerformLayout();
             panelFill.ResumeLayout(false);
@@ -144,5 +145,6 @@
         private DataGridView dataGridViewStatuses;
         protected Panel panelFill;
         private ErrorProvider errorProviderStatuses;
+
+        }
     }
-}

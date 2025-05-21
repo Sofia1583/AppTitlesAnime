@@ -1,6 +1,6 @@
 ﻿namespace AppTitlesAnime.Models
 {
-    partial class FormGenreTypes
+    partial class FormListGenres
     {
         /// <summary>
         /// Required designer variable.

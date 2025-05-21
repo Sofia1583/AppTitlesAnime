@@ -361,3 +361,10 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/AppTitlesAnime/Models/AppContext.cs
+/AppTitlesAnime/Models/Type.cs
+/AppTitlesAnime/FormAddTitle.Designer.cs
+/AppTitlesAnime/FormListTitles.cs
+/AppTitlesAnime/FormListTitles.Designer.cs
+/AppTitlesAnime/FormMain.Designer.cs
+/AppTitlesAnime/FormStatuses.cs

@@ -4,11 +4,11 @@ using Microsoft.EntityFrameworkCore;
 
 namespace AppTitlesAnime.Models
 {
-    public partial class FormGenreTypes : Form
+    public partial class FormListGenres : Form
     {
         private AppContext db;
 
-        public FormGenreTypes()
+        public FormListGenres()
         {
             InitializeComponent();
             db = new AppContext();

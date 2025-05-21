@@ -48,7 +48,7 @@ namespace AppTitlesAnime
 
             Type type = db.Types.Find(id);
             formAddType formAddType = new();
-            formAddType.textBoxType.Text = type.TypeName;
+            formAddType.textBoxType.Text = (string)type.TypeName;
 
             DialogResult result = formAddType.ShowDialog(this);
 

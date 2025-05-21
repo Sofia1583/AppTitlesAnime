@@ -17,13 +17,13 @@ namespace AppTitlesAnime
 
         private void ButtonGenre_Click(object sender, EventArgs e)
         {
-            FormGenreTypes genreForm = new FormGenreTypes();
+            FormListGenres genreForm = new FormListGenres();
             genreForm.Show();
         }
 
         private void ButtonShowStatuses_Click(object sender, EventArgs e)
         {
-            FormStatuses statuseForm = new FormStatuses();
+            FormListStatuses statuseForm = new FormListStatuses();
             statuseForm.Show();
         }
 

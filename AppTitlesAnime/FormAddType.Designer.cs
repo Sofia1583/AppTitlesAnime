@@ -198,6 +198,7 @@
             Controls.Add(flowLayoutPanel);
             Controls.Add(panelTop);
             Name = "formAddType";
+            Text = "Информация о типе";
             panelFill.ResumeLayout(false);
             panelFill.PerformLayout();
             flowLayoutPanelBottom.ResumeLayout(false);

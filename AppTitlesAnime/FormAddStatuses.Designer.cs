@@ -118,7 +118,7 @@
             Controls.Add(panelBottom);
             Controls.Add(panelTop);
             Name = "FormAddStatuses";
-            Text = "AddStatuses";
+            Text = "Информация о статусе";
             panelTop.ResumeLayout(false);
             panelTop.PerformLayout();
             panelBottom.ResumeLayout(false);

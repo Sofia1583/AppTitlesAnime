@@ -38,7 +38,6 @@ namespace AppTitlesAnime
         {
             if (!IsGenreNameValid())
             {
-                e.Cancel = true;
                 return; // Validation failed, stop further processing
             }
 
@@ -52,7 +51,6 @@ namespace AppTitlesAnime
                 {
                     errorProviderGenre.SetError(textBoxGenreName, "Такой объект уже существует");
                     btnSaveChanges.Enabled = false;
-                    e.Cancel = true; // Prevent focus from leaving the TextBox
                 }
                 else
                 {
@@ -63,8 +61,6 @@ namespace AppTitlesAnime
             catch (Exception ex)
             {
                 MessageBox.Show("Произошла ошибка: " + ex.Message);
-                // Логируйте ошибку!
-                e.Cancel = true; // Prevent focus from leaving the TextBox, something went wrong
             }
         }
 
